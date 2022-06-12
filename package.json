@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "typesafe-i18n": "typesafe-i18n"
+    "typesafe-i18n": "typesafe-i18n",
+    "start:client": "concurrently --names \"CLIENT,I18N\" -c \"red,cyan\" \"npm start\" \"npm run typesafe-i18n\""
   },
   "eslintConfig": {
     "extends": [
