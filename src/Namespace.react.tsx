@@ -1,30 +1,16 @@
-import React, { useEffect, useState } from "react"
-import { useI18nContext } from "./packages/localization/i18n-react"
-import { loadNamespaceAsync } from "./packages/localization/i18n-util.async"
+import React from "react"
 import { Nav } from "./Nav.react"
-import { Locales } from "./packages/localization/i18n-types"
+import { useLocalization } from "./packages/localization/localization"
 
 export const Namespace: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false)
-  const { LL, locale, setLocale } = useI18nContext()
+  const { tReady, LL } = useLocalization("namespace")
 
-  useEffect(() => {
-    const loadResources = async (locale: Locales) => {
-      setIsLoading(true)
-
-      await loadNamespaceAsync(locale, "namespace")
-      setLocale(locale) // this is MUST HAVE call
-
-      setIsLoading(false)
-    }
-
-    loadResources(locale)
-  }, [locale])
+  if (!tReady) return <span>Loading...</span>
 
   return (
     <>
       <Nav />
-      {isLoading ? "Loading..." : <div>{LL.namespace.PAGE_TITLE()}</div>}
+      <div>{LL.namespace.PAGE_TITLE()}</div>
     </>
   )
 }

@@ -1,0 +1,1 @@
+console.log("SOMEHOW MERGE RESOURCES 	(￣_￣)・・・")

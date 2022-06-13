@@ -1,5 +1,6 @@
 {
    "adapter": "react",
    "$schema": "https://unpkg.com/typesafe-i18n@5.5.2/schema/typesafe-i18n.json",
-   "outputPath": "./src/packages/localization/"
+   "outputPath": "./src/packages/localization/",
+   "runAfterGenerator": "node ./src/packages/localization/merge.js"
 }
