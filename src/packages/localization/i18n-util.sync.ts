@@ -7,9 +7,11 @@ import { loadedFormatters, loadedLocales, locales } from './i18n-util'
 
 import de from './de'
 import en from './en'
+import ru from './ru'
 
 import de_namespace from './de/namespace'
 import en_namespace from './en/namespace'
+import ru_namespace from './ru/namespace'
 
 const localeTranslations = {
 	de: {
@@ -19,6 +21,10 @@ const localeTranslations = {
 	en: {
 		...en,
 		namespace: en_namespace
+	},
+	ru: {
+		...ru,
+		namespace: ru_namespace
 	},
 }
 

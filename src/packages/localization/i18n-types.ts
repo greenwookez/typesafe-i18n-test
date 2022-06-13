@@ -8,6 +8,7 @@ export type BaseLocale = 'en'
 export type Locales =
 	| 'de'
 	| 'en'
+	| 'ru'
 
 export type Translation = RootTranslation & DisallowNamespaces
 
@@ -24,7 +25,12 @@ type RootTranslation = {
 	HI: RequiredParams<'name'>
 }
 
-export type NamespaceNamespaceTranslation = {}
+export type NamespaceNamespaceTranslation = {
+	/**
+	 * THIS IS A PAGE TITLE
+	 */
+	PAGE_TITLE: string
+}
 
 export type Namespaces =
 	| 'namespace'
@@ -43,6 +49,10 @@ export type TranslationFunctions = {
 	 */
 	HI: (arg: { name: string }) => LocalizedString
 	namespace: {
+		/**
+		 * THIS IS A PAGE TITLE
+		 */
+		PAGE_TITLE: () => LocalizedString
 	}
 }
 

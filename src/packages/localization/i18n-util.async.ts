@@ -8,6 +8,7 @@ import { loadedFormatters, loadedLocales, locales } from './i18n-util'
 const localeTranslationLoaders = {
 	de: () => import('./de'),
 	en: () => import('./en'),
+	ru: () => import('./ru'),
 }
 
 const localeNamespaceLoaders = {
@@ -16,6 +17,9 @@ const localeNamespaceLoaders = {
 	},
 	en: {
 		namespace: () => import('./en/namespace')
+	},
+	ru: {
+		namespace: () => import('./ru/namespace')
 	}
 }
 
